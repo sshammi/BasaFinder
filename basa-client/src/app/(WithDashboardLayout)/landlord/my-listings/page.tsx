@@ -61,7 +61,7 @@ const ManageHouses = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-14">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">All Listing Houses</h1>
         <Button onClick={() => router.push("/create-rental-house")}>Create New</Button>

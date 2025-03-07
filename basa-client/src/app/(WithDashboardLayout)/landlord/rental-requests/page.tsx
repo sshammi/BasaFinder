@@ -51,7 +51,7 @@ const LandlordRequests = () => {
 
     //console.log(requests);
     return (
-        <div className="max-w-3xl mx-auto p-6 bg-white rounded shadow-md">
+        <div className="max-w-3xl mx-auto p-14 bg-white rounded shadow-md">
             <h2 className="text-xl font-bold mb-4">Rental Requests</h2>
             {requests.length === 0 ? (
                 <p>No rental requests found.</p>

@@ -92,7 +92,7 @@ const EditHouse = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-4">
+    <div className="max-w-2xl mx-auto p-14">
       <h1 className="text-2xl font-semibold mb-4">Edit House</h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">

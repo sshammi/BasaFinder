@@ -85,7 +85,7 @@ const EditUserProfile = () => {
 
   return (
     <div className="max-w-2xl mx-auto p-14">
-      <h1 className="text-2xl font-semibold mb-4">Edit Profile</h1>
+      <h1 className="text-3xl font-semibold mb-6">Edit Profile</h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -117,7 +117,7 @@ const EditUserProfile = () => {
 
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded"
+          className="bg-[#FF4B27] hover:bg-orange-500 text-white px-4 py-2 rounded"
           disabled={loading}
         >
           {loading ? "Updating..." : "Update Profile"}

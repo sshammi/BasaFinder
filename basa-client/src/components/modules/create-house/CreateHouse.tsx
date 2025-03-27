@@ -21,20 +21,20 @@ import { useUser } from "@/context/UserContext";
 import { useRouter } from "next/navigation";
 
 export default function CreateListingForm() {
-  const { user, isLoading } = useUser(); // Assuming `loading` is available in `useUser` context
+  const { user, isLoading } = useUser();
   const router = useRouter();
   const [imageFiles, setImageFiles] = useState<File[]>([]);
   const [imagePreview, setImagePreview] = useState<string[]>([]);
   const [isUserLoaded, setIsUserLoaded] = useState(false);
 
-  // Default form values
   const form = useForm({
     defaultValues: {
       location: "",
       description: "",
-      amenities:"",
+      amenities: "",
       rentAmount: "",
       bedrooms: "",
+      category: "",
     },
   });
 
@@ -42,18 +42,16 @@ export default function CreateListingForm() {
     formState: { isSubmitting },
   } = form;
 
-  // Handle the loading state of the user asynchronously
   useEffect(() => {
     if (!isLoading && user) {
-      setIsUserLoaded(true); // Only proceed once the user is loaded
+      setIsUserLoaded(true);
     }
   }, [user, isLoading]);
 
-  // If user is still loading, show loading message
   if (!isUserLoaded) return <p>Loading user data...</p>;
 
   const landlordId = user?.id;
-  console.log(user)
+  console.log(user);
 
   const uploadImages = async () => {
     const uploadedUrls: string[] = [];
@@ -89,8 +87,10 @@ export default function CreateListingForm() {
         amenities: data.amenities,
         rentAmount: data.rentAmount,
         bedrooms: data.bedrooms,
+        category: data.category,
         images: imageUrls,
       };
+
       console.log(listingData);
       const res = await craeteHouse(listingData);
       if (res.success) {
@@ -121,6 +121,7 @@ export default function CreateListingForm() {
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="amenities"
@@ -176,6 +177,31 @@ export default function CreateListingForm() {
                 </FormItem>
               )}
             />
+
+            {/* Category Selection */}
+            <FormField
+              control={form.control}
+              name="category"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Category</FormLabel>
+                  <FormControl>
+                    <select
+                      {...field}
+                      className="w-full border border-gray-300 rounded-md p-2"
+                    >
+                      <option value="">Select a category</option>
+                      <option value="family">Family</option>
+                      <option value="bachelor">Bachelor</option>
+                      <option value="office">Office</option>
+                      <option value="sublet">Sublet</option>
+                      <option value="hostel">Hostel</option>
+                    </select>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
           </div>
 
           <div className="mt-4">
@@ -191,7 +217,7 @@ export default function CreateListingForm() {
             />
           </div>
 
-          <Button type="submit" className="mt-5 w-full">
+          <Button type="submit" className="mt-5 w-full  bg-[#FF4B27] hover:bg-orange-500 text-white">
             {isSubmitting ? "Submitting..." : "Post Listing"}
           </Button>
         </form>

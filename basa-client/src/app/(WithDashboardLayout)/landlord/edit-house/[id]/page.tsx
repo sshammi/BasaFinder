@@ -92,7 +92,7 @@ const EditHouse = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-14">
+    <div className="w-[70%] mx-auto p-14 ">
       <h1 className="text-2xl font-semibold mb-4">Edit House</h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -110,7 +110,7 @@ const EditHouse = () => {
           value={house.description}
           onChange={handleChange}
           placeholder="Description"
-          className="w-full p-2 border rounded"
+          className="w-full h-40 p-2 border rounded"
         />
 
         <input
@@ -147,7 +147,7 @@ const EditHouse = () => {
 
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded"
+          className="bg-[#FF4B27] hover:bg-orange-500 text-white px-4 py-2 rounded"
           disabled={loading}
         >
           {loading ? "Updating..." : "Update House"}

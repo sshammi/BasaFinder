@@ -102,7 +102,7 @@ const ChangePasswordPage = () => {
           <Button
             disabled={!!passwordConfirm && password !== passwordConfirm || isSubmitting}
             type="submit"
-            className="w-full"
+            className="w-full bg-[#FF4B27] hover:bg-orange-500"
           >
             {isSubmitting ? 'Updating...' : 'Change Password'}
           </Button>

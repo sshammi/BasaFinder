@@ -17,4 +17,8 @@ router.get('',BlogController.getAllBlogs)
 
 router.get('/:id',BlogController.getSingleBlogs)
 
+router.get("/category/:category", BlogController.getBlogsByCategory);
+
+router.get("/location/:location", BlogController.getBlogsByLocation);
+
 export const BlogRoutes=router;

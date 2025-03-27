@@ -35,6 +35,14 @@ const ListingSchema = new Schema<IListing>(
       type: [String], // Array of image URLs
       required: true,
     },
+    category: {
+      type: String,
+      enum: ["family", "bachelor", "office", "sublet", "hostel"],
+      required: true,
+    },
+    ratingCount:{
+      type:String,
+    }
   },
   {
     timestamps: true,
@@ -42,6 +50,6 @@ const ListingSchema = new Schema<IListing>(
   }
 );
 
-const Bike = model<IListing>("Bike", ListingSchema);
+const Listing = model<IListing>("Listing", ListingSchema);
 
-export default Bike;
+export default Listing;

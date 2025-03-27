@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { getAllUsers, updateUserRole } from "@/services/adminService";  // Importing updateUserRole
 import { toggleStatus } from "@/services/adminService";
 import { IUserrr } from "@/types/userrr";
+import { Skeleton } from "@/components/ui/skeleton"
 
 const UserManagement = () => {
   const [users, setUsers] = useState<IUserrr[]>([]);
@@ -49,11 +50,11 @@ const UserManagement = () => {
     }
   };
 
-  if (loading) return <p>Loading users...</p>;
+  if (loading) return <Skeleton className="w-[100px] h-[20px] rounded-full" />
 
   return (
     <div className="p-4 sm:p-14">
-      <h2 className="text-2xl font-bold mb-4">User Management</h2>
+      <h2 className="text-3xl font-bold mb-4">User Management</h2>
       <div className="overflow-x-auto">
         <table className="min-w-full border-collapse border border-gray-300">
           <thead>
@@ -81,7 +82,7 @@ const UserManagement = () => {
                   </select>
                 </td>
                 <td className="border border-gray-300 p-2">
-                  <Button onClick={() => toggleActivation(manus._id)}>
+                  <Button className='bg-[#FF4B27] hover:bg-orange-500' onClick={() => toggleActivation(manus._id)}>
                     {manus.deactive ? "Activate" : "Deactivate"}
                   </Button>
                 </td>

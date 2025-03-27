@@ -122,3 +122,33 @@ export const deleteHouse = async (id: string): Promise<any> => {
     return Error(error);
   }
 };
+
+export const getHousesByCategory = async (category: string) => {
+  console.log(category);
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/house/category/${category}`, {
+      next: {
+        tags: ["PRODUCT"],
+      },
+    });
+    const data = await res.json();
+    return data;
+  } catch (error: any) {
+    return Error(error.message);
+  }
+};
+
+export const getHousesByLocation = async (location: string) => {
+  //console.log(location);
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/house/location/${location}`, {
+      next: {
+        tags: ["PRODUCT"],
+      },
+    });
+    const data = await res.json();
+    return data;
+  } catch (error: any) {
+    return Error(error.message);
+  }
+};

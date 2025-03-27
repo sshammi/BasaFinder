@@ -147,7 +147,7 @@ const EditHouse = () => {
 
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded"
+          className="bg-[#FF4B27] hover:bg-orange-500 text-white px-4 py-2 rounded"
           disabled={loading}
         >
           {loading ? "Updating..." : "Update House"}

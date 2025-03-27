@@ -82,7 +82,7 @@ const ManageHouses = () => {
             <p className="text-md font-semibold mt-2">${house.rentAmount}</p>
             <div className="mt-3 flex gap-2">
               <Button onClick={() => handleEdit(house._id)}>Edit</Button>
-              <Button onClick={() => handleDelete(house._id)} variant="destructive">
+              <Button className="bg-[#FF4B27]" onClick={() => handleDelete(house._id)} variant="destructive">
                 Delete
               </Button>
             </div>

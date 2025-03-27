@@ -78,11 +78,35 @@ const deleteBlog = catchAsync(async (req, res) => {
     });
 });
 
+const getBlogsByCategory = catchAsync(async (req, res) => {
+    const { category } = req.params; 
+    const listings = await BlogServices.getListingsByCategory(category);
+
+    sendResponse(res, {
+        success: true,
+        message: "Houses fetched successfully by category",
+        statusCode: StatusCodes.OK,
+        data: listings,
+    });
+});
+const getBlogsByLocation = catchAsync(async (req, res) => {
+    const { location } = req.params; 
+    const listings = await BlogServices.getListingsByLocation(location);
+    sendResponse(res, {
+        success: true,
+        message: "Houses fetched successfully by location",
+        statusCode: StatusCodes.OK,
+        data: listings,
+    });
+});
+
 export const BlogController = {
     createBlog,
     updateBlog,
     getAllBlogs,
     deleteBlog,
     getSingleBlogs,
-    getMyBlogs
+    getMyBlogs,
+    getBlogsByCategory,
+    getBlogsByLocation,
 };

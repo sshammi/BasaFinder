@@ -151,7 +151,7 @@ const RentalRequest = () => {
                         <label>I agree to the terms and conditions</label>
                     </div>
 
-                    <Button type="submit">Submit Request</Button>
+                    <Button className='bg-[#FF4B27] hover:bg-orange-500 text-white' type="submit">Submit Request</Button>
                 </form>
             </Form>
         </div>

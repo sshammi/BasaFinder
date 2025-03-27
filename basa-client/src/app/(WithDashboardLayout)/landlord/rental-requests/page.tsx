@@ -51,11 +51,12 @@ const LandlordRequests = () => {
 
     //console.log(requests);
     return (
-        <div className="max-w-3xl mx-auto p-14 bg-white rounded shadow-md">
-            <h2 className="text-xl font-bold mb-4">Rental Requests</h2>
+        <div className="max-w-3xl mx-auto p-14 bg-white">
+            <h2 className="text-5xl font-bold mb-4 text-center text-[#002630]">Rental Requests</h2>
             {requests.length === 0 ? (
                 <p>No rental requests found.</p>
             ) : (
+                <div>
                 <ul className="space-y-4">
                     {requests.map((request) => (
                         <li key={request._id} className="p-4 border rounded">
@@ -71,14 +72,14 @@ const LandlordRequests = () => {
                                 <Button
                                     onClick={() => updateRequestStatus(request._id, 'approved')}
                                     disabled={request.status === 'approved'}
-                                    className="bg-green-500"
+                                    className="bg-[#002630] px-6"
                                 >
                                     Approve
                                 </Button>
                                 <Button
                                     onClick={() => updateRequestStatus(request._id, 'rejected')}
                                     disabled={request.status === 'rejected'}
-                                    className="bg-red-500"
+                                    className="bg-[#FF4B27] hover:bg-orange-500 px-7"
                                 >
                                     Reject
                                 </Button>
@@ -86,6 +87,7 @@ const LandlordRequests = () => {
                         </li>
                     ))}
                 </ul>
+                </div>
             )}
         </div>
     );

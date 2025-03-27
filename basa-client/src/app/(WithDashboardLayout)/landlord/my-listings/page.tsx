@@ -64,7 +64,7 @@ const ManageHouses = () => {
     <div className="p-14">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">All Listing Houses</h1>
-        <Button onClick={() => router.push("/create-rental-house")}>Create New</Button>
+        <Button className="bg-[#FF4B27] hover:bg-orange-600" onClick={() => router.push("/landlord/create-rental-house")}>Create New</Button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {houses.map((house) => (
@@ -80,10 +80,11 @@ const ManageHouses = () => {
             )}
             <h2 className="text-base font-bold mt-2">{house.description}</h2>
             <p className="text-sm text-gray-500">{house.location}</p>
-            <p className="text-md font-semibold mt-2">${house.rentAmount}</p>
+            <p className="text-md font-semibold mt-2">BDT {house.rentAmount}</p>
+            <p className="text-md font-semibold mt-2">{house.category}</p>
             <div className="mt-3 flex gap-2">
               <Button onClick={() => handleEdit(house._id)}>Edit</Button>
-              <Button onClick={() => handleDelete(house._id)} variant="destructive">
+              <Button className="bg-[#FF4B27]" onClick={() => handleDelete(house._id)} variant="destructive">
                 Delete
               </Button>
             </div>

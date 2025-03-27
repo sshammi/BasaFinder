@@ -6,9 +6,11 @@ const ListingCreateValidationSchema = z.object({
     location: z.string({ required_error: "Location is required." }),
     description: z.string({ required_error: "Description is required." }),
     amenities: z.string({ required_error: "Amenities is required." }),
-    rentAmount: z.string({ required_error: "Rent amount is required." }), // Number for rent amount
-    bedrooms: z.string({ required_error: "Number of bedrooms is required." }), // Number for bedrooms
+    rentAmount: z.string({ required_error: "Rent amount is required." }), // String (consider changing to number)
+    bedrooms: z.string({ required_error: "Number of bedrooms is required." }), // String (consider changing to number)
     images: z.array(z.string(), { required_error: "At least one image URL is required." }), // Array of strings for images
+    category: z.enum(["family", "bachelor", "office", "sublet", "hostel"], { required_error: "Category is required." }), // Enum validation for category
+    ratingCount: z.string().optional(), // Optional rating count
   }),
 });
 
@@ -21,6 +23,8 @@ const ListingUpdateValidationSchema = z.object({
     rentAmount: z.string().optional(),
     bedrooms: z.string().optional(),
     images: z.array(z.string()).optional(),
+    category: z.enum(["family", "bachelor", "office", "sublet", "hostel"]).optional(), // Optional category update
+    ratingCount: z.string().optional(), // Optional rating count update
   }),
 });
 
@@ -28,4 +32,3 @@ export const ListingValidation = {
   ListingCreateValidationSchema,
   ListingUpdateValidationSchema,
 };
-

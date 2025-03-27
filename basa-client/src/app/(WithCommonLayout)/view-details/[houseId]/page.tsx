@@ -1,17 +1,18 @@
-'use client'
+'use client';
 
-import { ImageSlider } from '@/components/modules/slider/slider';
 import { Button } from '@/components/ui/button';
 import { getSingleHouse } from '@/services/house';
 import { IHouse } from '@/types/house';
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { DetailsImageSlider } from '@/components/modules/slider/detailSlider';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const ViewDetails = () => {
   const { houseId } = useParams<{ houseId: string }>();
   const [house, setHouse] = useState<IHouse | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const router=useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     if (houseId) {
@@ -37,35 +38,49 @@ const ViewDetails = () => {
   }
 
   if (!house) {
-    return <p>Loading...</p>;
+    return <Skeleton className="w-[100px] h-[20px] rounded-full" />;
   }
 
   return (
-    <div className="max-w-[350px] mx-auto p-6">
-      <div className="mb-4">
-        {house && house.images && house.images.length > 1 ? (
-          <ImageSlider images={house.images} />
-        ) : (
-          house && house.images && house.images[0] ? (
+    <div className="max-w-6xl mx-auto p-8 mt-10">
+      <div className="flex flex-col md:flex-row gap-8">
+        
+        {/* Left: Image Slider */}
+        <div className="md:w-1/2">
+          {house.images?.length > 1 ? (
+                          <DetailsImageSlider images={house.images} />
+          )  : (
             <img
-              src={house.images[0]}
+              src="/fallback-image.jpg"
               alt="house-renter"
-              className="w-full h-auto max-h-[300px] object-cover rounded-lg"
+              className="w-full h-[400px] object-cover rounded-xl"
             />
-          ) : (
-            <p>No images available</p>
-          )
-        )}
+          )}
+        </div>
+
+        {/* Right: Details */}
+        <div className="md:w-1/2 space-y-4 py-6">
+          <h2 className="text-3xl">{house.description}</h2>
+          <p className="text-xl text-gray-800">Location: {house.location}</p>
+          <p className="text-xl text-gray-800">Category: {house.category}</p>
+          <p className="text-2xl font-semibold text-orange-500">BDT {house.rentAmount}</p>
+
+          <div className="border-t pt-4 space-y-2">
+            <h3 className="text-xl font-semibold">Additional Details</h3>
+            <p className="text-gray-700">House ID: {house._id}</p>
+            <p className="text-gray-700">Amenities: {house.amenities}</p>
+          </div>
+        </div>
       </div>
 
-      <h2 className="text-2xl font-bold">Description: {house.description}</h2>
-      <p className="text-lg text-gray-600 mt-2">Location: {house.location}</p>
-      <p className="text-xl font-semibold mt-4">${house.rentAmount}</p>
-
-      <div className="mt-6">
-        <h3 className="text-xl font-semibold">Additional Details: {house.amenities}</h3>
-        <p className="text-gray-700 mt-2">House ID: {house._id}</p>
-        <Button className='bg-gray-700 py-4 m-5' onClick={() => router.push(`/rental-request/${house._id}`)}>Rental Request</Button>
+      {/* Bottom: Rental Request Button */}
+      <div className="mt-8 flex justify-center">
+        <Button
+          className="bg-orange-500 text-white px-6 py-3 text-lg rounded-lg shadow-md hover:bg-orange-600 transition"
+          onClick={() => router.push(`/rental-request/${house._id}`)}
+        >
+          Rental Request
+        </Button>
       </div>
     </div>
   );

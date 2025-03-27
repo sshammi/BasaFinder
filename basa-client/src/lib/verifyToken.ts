@@ -9,8 +9,8 @@ export const isTokenExpired = async (token: string): Promise<boolean> => {
 
   try {
     const decoded: { exp: number } = jwtDecode(token);
-
-    return decoded.exp * 1000 < Date.now();
+    const serverTime = Date.now();
+    return decoded.exp * 1000 <serverTime;
   } catch (err: any) {
     console.error(err);
     return true;

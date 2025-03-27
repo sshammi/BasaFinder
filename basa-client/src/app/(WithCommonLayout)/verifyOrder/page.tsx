@@ -184,7 +184,7 @@ export default function OrderVerification() {
           </CardContent>
           <CardFooter>
             <Link href="/tenant/requests">
-              <Button className="w-full bg-gray-800">View Orders</Button>
+              <Button className="w-full bg-[#FF4B27] hover:bg-orange-500 text-white">View Orders</Button>
             </Link>
           </CardFooter>
         </Card>

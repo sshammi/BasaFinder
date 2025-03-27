@@ -38,28 +38,32 @@ export default function Navbar() {
     return "/login";
   };
   return (
-    <header className="border-b w-full bg-gray-700">
+    <header className="border-b w-full bg-white px-10">
       <div className="container flex justify-between items-center mx-auto h-16 px-4 md:px-6">
         {/* Logo */}
         <Link href="/" className="text-2xl font-black flex items-center gap-2">
-          <span className="ml-2 text-white">BasaFinder</span>
+          <span className="ml-2 text-[#FF4B27]">BasaFinder</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 text-white">
-          <Link href="/">Home</Link>
+        <nav className="hidden md:flex items-center gap-6 text-[#FF4B27]">
           <Link href="/about">About Us</Link>
-          <Link href="/all-rentals">All Rentals</Link>
-          <Link href={getDashboardLink()}>Dashboard</Link>
-
+          <Link href="/howitWorks">How it Works</Link>
+          <Link href="/pricing">Pricing</Link>
+          <Link href="/help">Help</Link>
+          <Link href="/all-rentals">Rentals</Link>
+        
           {user ? (
             <DropdownMenu>
               <DropdownMenuTrigger>
                 My Account
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="bg-gray-700 text-white border-gray-700">
+              <DropdownMenuContent align="end" className="text-white bg-[#FF4B27] border-[#FF4B27]">
+            <DropdownMenuItem>
+                  <Link href={getDashboardLink()}>Dashboard</Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem
-                  className="bg-red-500 text-white cursor-pointer"
+                  className="text-white bg-[#FF4B27] cursor-pointer"
                   onClick={handleLogout}
                 >
                   <LogOut className="mr-2" />
@@ -77,7 +81,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 text-white"
+          className="md:hidden p-2 text-[#FF4B27]"
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -85,7 +89,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-gray-700 shadow-md">
+        <div className="md:hidden bg-[#FF4B27] text-white">
           <div className="flex flex-col space-y-2 py-3 px-4 text-white">
             <Link href="/" onClick={() => setMenuOpen(false)}>
               Home
@@ -94,22 +98,28 @@ export default function Navbar() {
               About Us
             </Link>
             <Link href="/all-rentals" onClick={() => setMenuOpen(false)}>
-              All Rentals
+              Rentals
             </Link>
-            <Link
+            <Link href="/howitWorks" onClick={() => setMenuOpen(false)}>
+              How it works
+            </Link>
+            <Link href="/pricing" onClick={() => setMenuOpen(false)}>
+              Pricing
+            </Link>
+            <Link href="/help" onClick={() => setMenuOpen(false)}>
+              Help
+            </Link>
+            
+            {user ? (
+              <>
+                <Link
               href={getDashboardLink()}
               onClick={() => setMenuOpen(false)}
             >
               Dashboard
-            </Link>
-
-            {user ? (
-              <>
-                <Link href="/profile" onClick={() => setMenuOpen(false)}>
-                  My Account
-                </Link>
+             </Link>
                 <button
-                  className="flex items-center gap-2 text-red-500 hover:bg-red-700 p-2 rounded-md"
+                  className="flex items-center gap-2 text-white hover:bg-orange-700 p-2 rounded-md"
                   onClick={() => {
                     handleLogout();
                     setMenuOpen(false);

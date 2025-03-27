@@ -52,9 +52,9 @@ export default function RegisterForm() {
   return (
     <div className="border-2 border-gray-300 rounded-xl flex-grow max-w-md w-full p-5">
       <div className="flex items-center space-x-4">
-        <div>
-          <h1 className="text-xl font-semibold">Register</h1>
-          <p className="font-extralight text-sm text-gray-600">Start your journey!</p>
+        <div className='items-center'>
+          <h1 className="text-2xl font-semibold">Register</h1>
+          <p className="font-extralight text-sm text-gray-600">Start your new journey!</p>
         </div>
       </div>
       <Form {...form}>
@@ -164,7 +164,7 @@ export default function RegisterForm() {
           <Button
             disabled={!!passwordConfirm && password !== passwordConfirm}
             type="submit"
-            className="mt-5 w-full"
+            className="mt-5 w-full bg-[#FF4B27] text-white hover:bg-orange-500"
           >
             {isSubmitting ? "Registering...." : "Register"}
           </Button>
@@ -172,7 +172,7 @@ export default function RegisterForm() {
       </Form>
       <p className="text-sm text-gray-600 text-center my-3">
         Already have an account?
-        <Link href="/login" className="text-primary ml-1">
+        <Link href="/login" className="text-primary ml-1 hover:text-[#FF4B27]">
           Login
         </Link>
       </p>

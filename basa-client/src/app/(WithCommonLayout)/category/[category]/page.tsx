@@ -53,13 +53,13 @@ const CategoryPage = () => {
   const handlePageChange = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
-    <div className="max-w-4xl mx-auto mt-6">
-      <h1 className="text-2xl font-bold text-center capitalize">{category} Houses</h1>
+    <div className="mt-6">
+      <h1 className="text-4xl font-bold text-center capitalize mb-7">{category} Houses</h1>
       {loading ? (
         <Skeleton className="w-[100px] h-[20px] rounded-full" />
       ) : (
-        <div className="w-full md:w-3/4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="w-full px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {currentHouses.length > 0 ? (
               currentHouses.map((house) => (
                 <div key={house._id} className="border rounded-lg p-4 shadow-lg">
@@ -69,7 +69,7 @@ const CategoryPage = () => {
                     <img
                       src={house.images?.[0] || "/fallback-image.jpg"}
                       alt="House"
-                      className="w-full h-40 object-cover rounded"
+                      className="w-full h-40 object-cover rounded mb-3"
                     />
                   )}
                   {house.description.length > 15 ? house.description.slice(0, 15) + "..." : house.description}

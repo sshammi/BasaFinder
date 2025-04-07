@@ -77,7 +77,7 @@ const ManageHouses = () => {
                 className="w-full h-36 object-cover rounded"
               />
             )}
-            <h2 className="text-base font-bold mt-2">{house.description}</h2>
+            <h2 className="text-base mt-2">{house.description}</h2>
             <p className="text-sm text-gray-500">{house.location}</p>
             <p className="text-md font-semibold mt-2">${house.rentAmount}</p>
             <div className="mt-3 flex gap-2">

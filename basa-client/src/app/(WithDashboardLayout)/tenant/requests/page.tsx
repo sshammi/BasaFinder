@@ -42,8 +42,8 @@ const MyRequestsPage = () => {
     if (loading) return <p>Loading...</p>;
     console.log(requests);
     return (
-        <div className="max-w-3xl mx-auto p-14 bg-white rounded shadow-md">
-            <h2 className="text-xl font-bold mb-4">My Rental Requests</h2>
+        <div className="p-14">
+            <h2 className="text-4xl font-bold mb-8 text-center">My Rental Requests</h2>
             {requests.length === 0 ? (
                 <p>No rental requests found.</p>
             ) : (

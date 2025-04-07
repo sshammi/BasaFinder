@@ -75,16 +75,18 @@ const ManageHouses = () => {
               <img
                 src={house.images[0]}
                 alt="house-renter"
-                className="w-full h-36 object-cover rounded"
+                className="w-full h-40 object-cover rounded"
               />
             )}
-            <h2 className="text-base font-bold mt-2">{house.description}</h2>
+            <h2 className="text-base mt-2">{house.description.length > 20
+                    ? house.description.slice(0, 20) + "..."
+                    : house.description}</h2>
             <p className="text-sm text-gray-500">{house.location}</p>
             <p className="text-md font-semibold mt-2">BDT {house.rentAmount}</p>
             <p className="text-md font-semibold mt-2">{house.category}</p>
-            <div className="mt-3 flex gap-2">
-              <Button onClick={() => handleEdit(house._id)}>Edit</Button>
-              <Button className="bg-[#FF4B27]" onClick={() => handleDelete(house._id)} variant="destructive">
+            <div className="mt-3 flex gap-2 items-center">
+              <Button className='px-10' onClick={() => handleEdit(house._id) }>Edit</Button>
+              <Button className="bg-[#FF4B27] px-8" onClick={() => handleDelete(house._id)} variant="destructive">
                 Delete
               </Button>
             </div>

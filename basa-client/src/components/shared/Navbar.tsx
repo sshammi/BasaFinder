@@ -51,7 +51,7 @@ export default function Navbar() {
           <Link href="/howitWorks">How it Works</Link>
           <Link href="/pricing">Pricing</Link>
           <Link href="/help">Help</Link>
-          <Link href="/all-rentals">Rentals</Link>
+          <Link href="/all-rentals">All Rentals</Link>
         
           {user ? (
             <DropdownMenu>
@@ -98,7 +98,7 @@ export default function Navbar() {
               About Us
             </Link>
             <Link href="/all-rentals" onClick={() => setMenuOpen(false)}>
-              Rentals
+              All Rentals
             </Link>
             <Link href="/howitWorks" onClick={() => setMenuOpen(false)}>
               How it works

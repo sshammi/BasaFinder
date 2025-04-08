@@ -84,8 +84,8 @@ const EditUserProfile = () => {
   
 
   return (
-    <div className="max-w-2xl mx-auto p-14">
-      <h1 className="text-3xl font-semibold mb-6">Edit Profile</h1>
+    <div className="max-w-2xl mx-auto py-20 md:p-14">
+      <h1 className="text-3xl font-semibold mb-6 text-center">Edit Profile</h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -114,7 +114,7 @@ const EditUserProfile = () => {
           placeholder="Phone Number"
           className="w-full p-2 border rounded"
         />
-
+        <div className='items-center justify-center'>
         <button
           type="submit"
           className="bg-[#FF4B27] hover:bg-orange-500 text-white px-4 py-2 rounded"
@@ -122,6 +122,7 @@ const EditUserProfile = () => {
         >
           {loading ? "Updating..." : "Update Profile"}
         </button>
+        </div>
       </form>
     </div>
   );

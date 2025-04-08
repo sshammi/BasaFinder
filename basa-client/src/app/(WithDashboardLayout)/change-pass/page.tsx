@@ -52,8 +52,8 @@ const ChangePasswordPage = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-semibold text-center mb-6">Change Password</h2>
+    <div className="max-w-md mx-auto mt-20 md:mt-10 p-6 bg-white rounded-lg shadow-lg">
+      <h2 className="text-3xl font-semibold text-center mb-6">Change Password</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField

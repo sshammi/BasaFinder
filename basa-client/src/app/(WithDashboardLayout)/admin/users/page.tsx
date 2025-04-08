@@ -53,7 +53,7 @@ const UserManagement = () => {
   if (loading) return <Skeleton className="w-[100px] h-[20px] rounded-full" />
 
   return (
-    <div className="p-4 sm:p-14">
+    <div className="py-20 md:p-6">
       <h2 className="text-3xl font-bold mb-4">User Management</h2>
       <div className="overflow-x-auto">
         <table className="min-w-full border-collapse border border-gray-300">

@@ -18,9 +18,9 @@ export default function HelpPage() {
     };
   
   return (
-    <div className="px-4 sm:px-6 lg:px-8">
+    <div>
       {/* Hero Section */}
-      <div className="text-center py-20 bg-[#FDDBD1] text-gray-800 -mx-28">
+      <div className="text-center py-20 bg-[#FDDBD1] text-gray-800 -mx-24">
         <h1 className="text-4xl md:text-5xl font-extrabold">Help & Support</h1>
         <p className="text-lg md:text-2xl mt-6 mb-10">Need assistance? Find answers to common questions and get support for your rental needs.</p>
       </div>

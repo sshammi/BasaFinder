@@ -22,8 +22,8 @@ const ReviewSection = () => {
     ];
 
     return (
-        <div className="px-4 py-12 bg-[#002630] -mx-28">
-            <h2 className="text-5xl font-bold text-center my-12 text-white">
+        <div className="px-4 py-24 bg-[#002630] -mx-24">
+            <h2 className="text-4xl md:text-5xl font-bold text-center my-12 text-white">
                 What our users say
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-24 mb-12">

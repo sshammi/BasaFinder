@@ -29,10 +29,10 @@ export default function HowItWorksPage() {
   const [role, setRole] = useState("tenant");
 
   return (
-    <div className="w-full">
+    <div>
       {/* Hero Section */}
       <div 
-        className={`flex flex-col items-center justify-center min-h-[50vh] text-gray-800 p-10 sm:px-6 md:px-12 lg:px-24 transition-all duration-500 -mx-28 ${role === "tenant" ? "bg-[#FDDBD1]" : "bg-[#D1E8FD]"}`}
+        className={`flex flex-col items-center justify-center min-h-[50vh] text-gray-800 p-10 sm:px-6 md:px-12 lg:px-24 transition-all duration-500 -mx-24 ${role === "tenant" ? "bg-[#FDDBD1]" : "bg-[#D1E8FD]"}`}
       >
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-center">How It Works</h1>
         <p className="text-lg sm:text-xl text-center">Learn how our platform helps tenants and landlords.</p>

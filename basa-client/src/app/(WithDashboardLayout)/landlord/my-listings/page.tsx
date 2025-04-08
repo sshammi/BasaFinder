@@ -61,7 +61,7 @@ const ManageHouses = () => {
   };
 
   return (
-    <div className="p-14">
+    <div className="py-14 md:p-10">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">All Listing Houses</h1>
         <Button className="bg-[#FF4B27] hover:bg-orange-600" onClick={() => router.push("/landlord/create-rental-house")}>Create New</Button>

@@ -43,15 +43,15 @@ const ViewDetails = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-8 mt-10">
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col gap-8 justify-center items-center">
         
         {/* Left: Image Slider */}
-        <div className="md:w-1/2">
+        <div className="w-full">
           {house.images?.length > 1 ? (
                           <DetailsImageSlider images={house.images} />
           )  : (
             <img
-              src="/fallback-image.jpg"
+              src={house.images[0]}
               alt="house-renter"
               className="w-full h-[400px] object-cover rounded-xl"
             />
@@ -59,14 +59,14 @@ const ViewDetails = () => {
         </div>
 
         {/* Right: Details */}
-        <div className="md:w-1/2 space-y-4 py-6">
-          <h2 className="text-3xl">{house.description}</h2>
-          <p className="text-xl text-gray-800">Location: {house.location}</p>
-          <p className="text-xl text-gray-800">Category: {house.category}</p>
-          <p className="text-2xl font-semibold text-orange-500">BDT {house.rentAmount}</p>
+        <div className="w-full space-y-4 py-6">
+          <h2 className="text-md md:text-3xl">{house.description}</h2>
+          <p className="text-2xl text-gray-800  py-3">Location: {house.location}</p>
+          <p className="text-2xl text-gray-800  py-3">Category: {house.category}</p>
+          <p className="text-2xl font-semibold text-orange-500 py-3">BDT {house.rentAmount}/month</p>
 
           <div className="border-t pt-4 space-y-2">
-            <h3 className="text-xl font-semibold">Additional Details</h3>
+            <h3 className="text-2xl font-semibold py-3">Additional Details</h3>
             <p className="text-gray-700">House ID: {house._id}</p>
             <p className="text-gray-700">Amenities: {house.amenities}</p>
           </div>

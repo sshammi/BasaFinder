@@ -45,9 +45,9 @@ const FAQPage = () => {
   };
 
   return (
-    <div className="mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 max-w-[90%] md:max-w-[70%]">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
-        Your questions, answered
+    <div className="mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 max-w-full md:max-w-[70%]">
+      <h1 className="text-5xl font-bold text-gray-900 my-8 text-center">
+        FAQ
       </h1>
 
       <div className="space-y-4">

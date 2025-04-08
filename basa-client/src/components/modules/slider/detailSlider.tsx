@@ -19,13 +19,13 @@ export const DetailsImageSlider = ({ images }: { images: string[] }) => {
           className="w-[100%] h-400px object-cover rounded"
         />
         <button
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2  text-white p-2 rounded-full"
           onClick={handlePrev}
         >
           &lt;
         </button>
         <button
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full"
           onClick={handleNext}
         >
           &gt;

@@ -99,29 +99,30 @@ const AllRentals = () => {
     };
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 p-4 -mx-28">
-      <div className="hidden md:block w-1/4 p-4 bg-white shadow-md rounded-lg pl-6">
+    <div className="flex flex-col md:flex-row gap-6 p-4 -mx-24">
+      <div className="hidden md:block w-1/4 p-4 pl-6">
         <h2 className="text-xl font-semibold mb-4">Filters</h2>
         <input
           type="text"
           placeholder="Location"
-          className="border p-2 rounded w-full"
+          className="border border-[#FF4B27] p-2 rounded w-full"
           value={location}
           onChange={(e) => handleSearchQuery("location", e.target.value)}
         />
         <div className="mt-4">
-          <span className="text-gray-800">Max Rent: ${rentAmount || maxRent}</span>
+          <span className="text-gray-800">Max Rent: BDT {rentAmount || maxRent}</span>
           <Slider
             max={maxRent}
             step={100}
             value={[Number(rentAmount || maxRent)]}
             onValueChange={(value) => handleSearchQuery("rentAmount", value[0])}
+            className='h-1 pt-3'
           />
         </div>
         <input
           type="number"
           placeholder="Bedrooms"
-          className="border p-2 rounded w-full mt-4"
+          className="border border-[#FF4B27] p-2 rounded w-full mt-4"
           value={bedrooms}
           onChange={(e) => handleSearchQuery("bedrooms", e.target.value)}
         />

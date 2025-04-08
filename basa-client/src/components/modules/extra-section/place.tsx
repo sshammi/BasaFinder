@@ -37,8 +37,8 @@ const PlaceService = () => {
   };
 
   return (
-    <div className="p-4 flex flex-col items-center text-center py-16">
-  <h1 className="text-6xl font-bold mb-4">Your next base could be here</h1>
+    <div className="p-0 md:p-4 flex flex-col items-center text-center py-16 my-20">
+  <h1 className="text-4xl md:text-6xl font-bold mb-4">Your next house could be here</h1>
   
   <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     {locations.map((location) => (
@@ -60,8 +60,8 @@ const PlaceService = () => {
       height={400}
     />
   </div>
-  <p className='text-6xl font-extrabold w-full text-center pt-7 pb-5'>150+ CITIES</p>
-   <p className='text-3xl'>50,000+ homes advertised by real landlords</p>
+  <p className='text-4xl md:text-6xl font-extrabold w-full text-center pt-7 pb-8 md:pb-5'>150+ CITIES</p>
+  <p className='text-2xl md:text-3xl'>50,000+ homes advertised by real landlords</p>
 </div>
 
   );

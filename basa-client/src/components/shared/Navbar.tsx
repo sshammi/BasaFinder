@@ -14,6 +14,7 @@ import { useUser } from "@/context/UserContext";
 import { usePathname, useRouter } from "next/navigation";
 import { logout } from "@/services/AuthService";
 import { protectedRoutes } from "@/constants";
+import { CldImage } from "next-cloudinary";
 
 export default function Navbar() {
   const { user, setIsLoading } = useUser();
@@ -42,6 +43,12 @@ export default function Navbar() {
       <div className="container flex justify-between items-center mx-auto h-16 px-4 md:px-6">
         {/* Logo */}
         <Link href="/" className="text-2xl font-black flex items-center gap-2">
+        <CldImage
+         src="favicon1_oh8a3w"
+         alt="Location's Photo"
+         width={24}
+         height={24}
+        />
           <span className="ml-2 text-[#FF4B27]">BasaFinder</span>
         </Link>
 
@@ -91,14 +98,8 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-[#FF4B27] text-white">
           <div className="flex flex-col space-y-2 py-3 px-4 text-white">
-            <Link href="/" onClick={() => setMenuOpen(false)}>
-              Home
-            </Link>
             <Link href="/about" onClick={() => setMenuOpen(false)}>
               About Us
-            </Link>
-            <Link href="/all-rentals" onClick={() => setMenuOpen(false)}>
-              All Rentals
             </Link>
             <Link href="/howitWorks" onClick={() => setMenuOpen(false)}>
               How it works
@@ -108,6 +109,9 @@ export default function Navbar() {
             </Link>
             <Link href="/help" onClick={() => setMenuOpen(false)}>
               Help
+            </Link>
+            <Link href="/all-rentals" onClick={() => setMenuOpen(false)}>
+              All Rentals
             </Link>
             
             {user ? (

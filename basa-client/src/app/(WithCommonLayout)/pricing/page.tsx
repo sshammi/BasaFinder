@@ -32,7 +32,7 @@ export default function PricingPage() {
     <div className="w-full">
       {/* Hero Section */}
       <div 
-        className={`flex flex-col items-center justify-center text-gray-800 px-6 py-16 transition-all duration-500 -mx-28
+        className={`flex flex-col items-center justify-center text-gray-800 px-6 py-16 transition-all duration-500 -mx-24
         ${role === "tenant" ? "bg-[#FDDBD1]" : "bg-[#D1E8FD]"}`}
       >
         <h1 className="text-3xl md:text-5xl font-extrabold mb-4">Pricing</h1>

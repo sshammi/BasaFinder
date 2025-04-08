@@ -6,59 +6,18 @@ import FAQPage from "./faqSection";
 import ReviewSection from "./review";
 import HeroSection from "./heroSection";
 import { CldImage } from "next-cloudinary";
+import SecondSection from "./second";
 
 const TestimonialsAndTips = () => {
   
     return (
       <div>
         <HeroSection/>
-        <section>
-        <div className="max-w-7xl mx-auto text-center my-20">
-        <h2 className="text-5xl font-bold text-gray-900 mb-4 mx-4 text-center">Services For All Kinds of Need</h2>
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {/* Step 1 */}
-      <div className="p-6">
-        <p className=" text-gray-800 text-6xl font-extrabold mb-4 text-left">1</p>
-        <h3 className="text-3xl font-semibold text-gray-800 mb-3 text-left">Family</h3>
-        <p className="text-gray-800 text-left">
-        Discover the perfect family home with our wide selection of high-quality houses for rent. Enjoy spacious living.
-        </p>
-      </div>
-
-      {/* Step 2 */}
-      <div className="p-6">
-        <p className=" text-gray-800 text-6xl font-extrabold mb-4 text-left">2</p>
-        <h3 className="text-3xl font-semibold text-gray-800 mb-3 text-left">Office</h3>
-        <p className="text-gray-800 text-left">
-        Find the perfect office space to elevate your business. Explore high-quality workspaces, from private offices to co-working hubs.
-        </p>
-      </div>
-
-      {/* Step 3 */}
-      <div className="p-6">
-       <p className=" text-gray-800 text-6xl font-extrabold mb-4 text-left">3</p>
-        <h3 className="text-3xl font-semibold text-gray-800 mb-3 text-left">Hostel</h3>
-          <p className="text-[#002630] text-left">
-          Find comfortable and affordable hostel stays with ease. Explore shared and private rooms, save favorites, and get alerts.
-          </p>
-       </div>
-
-
-      {/* Step 4 */}
-      <div className="p-6">
-      <p className=" text-gray-800 text-6xl font-extrabold mb-4 text-left">4</p>
-        <h3 className="text-3xl font-semibold text-gray-800 mb-3 text-left">Sublet</h3>
-        <p className="text-gray-800 text-left">
-        Find the perfect sublet for short-term or flexible stays. Explore fully furnished spaces, save your favorites, and move in hassle-free!
-        </p>
-      </div>
-        </div>
-        </div>
-        </section>
+        <SecondSection/>
         <ServiceSection/> 
         <PlaceService/>       
-        <section className="bg-[#ff4b27ff] py-16 px-6 -mx-28">
-  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <section className="bg-[#ff4b27ff] py-24 px-6 -mx-24">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
     
     {/* Text Content */}
     <div className="text-center md:text-left md:w-1/2">
@@ -122,12 +81,12 @@ const TestimonialsAndTips = () => {
       />
     </div>
   </div>
-</section>
+        </section>
 
 
         <section>
         <div className="max-w-7xl mx-auto text-center my-20">
-        <h2 className="text-5xl font-bold text-gray-900 mb-4 mx-4 text-center">It's quick. All online. 100% safe.</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-[#ff4b27ff] md:text-gray-900 mb-4 md:mx-4 text-center">It's quick. All online. 100% safe.</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {/* Step 1 */}
       <div className="p-6">

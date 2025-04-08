@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { createMypayment, getMyRequest } from '@/services/requestRental';
 import { useUser } from '@/context/UserContext';
 import { RentalRequest } from '@/types/request';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const MyRequestsPage = () => {
     const { user } = useUser();
@@ -39,10 +40,10 @@ const MyRequestsPage = () => {
         fetchRequests();
     }, [user]);
     console.log(requests);
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Skeleton className="w-[100px] h-[20px] rounded-full" />;
     console.log(requests);
     return (
-        <div className="p-14">
+        <div className="py-20 md:p-6">
             <h2 className="text-4xl font-bold mb-8 text-center">My Rental Requests</h2>
             {requests.length === 0 ? (
                 <p>No rental requests found.</p>
@@ -50,7 +51,7 @@ const MyRequestsPage = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {requests.map((request) => (
                         <div key={request._id} className="p-4 border rounded bg-white shadow-md">
-                            <p><strong>Tenant Name:</strong> {request.name}</p>
+                            <p className="text-xl font-semibold text-blue-800"><strong>Tenant Name:</strong> {request.name}</p>
                             <p><strong>Email:</strong> {request.email}</p>
                             <p><strong>Message:</strong> {request.message}</p>
                             <p><strong>Status:</strong> {request.status}</p>

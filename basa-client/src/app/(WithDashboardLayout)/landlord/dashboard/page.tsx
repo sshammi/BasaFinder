@@ -57,7 +57,7 @@ export default function LandlordDashboard() {
   const pieColors = ["#f97316", "#1d4ed8"]; // Orange and Blue
 
   return (
-    <div className="p-14">
+    <div className="py-20 md:p-6">
       {/* Cards */}
       <div className="grid gap-4 md:grid-cols-2">
         {/* Total Houses */}

@@ -53,7 +53,7 @@ const LocationPage = () => {
 
   return (
     <div className="max-w-4xl mx-auto mt-6">
-      <h1 className="text-2xl font-bold text-center capitalize">{location} Houses</h1>
+      <h1 className="text-4xl font-bold text-center capitalize mb-7">{location} Houses</h1>
       {loading ? (
         <Skeleton className="w-[100px] h-[20px] rounded-full" />
       ) : (

@@ -54,11 +54,11 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-[#FF4B27]">
+          <Link href="/all-rentals">All Rentals</Link>
           <Link href="/about">About Us</Link>
           <Link href="/howitWorks">How it Works</Link>
           <Link href="/pricing">Pricing</Link>
           <Link href="/help">Help</Link>
-          <Link href="/all-rentals">All Rentals</Link>
         
           {user ? (
             <DropdownMenu>
@@ -98,6 +98,9 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-[#FF4B27] text-white">
           <div className="flex flex-col space-y-2 py-3 px-4 text-white">
+            <Link href="/all-rentals" onClick={() => setMenuOpen(false)}>
+              All Rentals
+            </Link>
             <Link href="/about" onClick={() => setMenuOpen(false)}>
               About Us
             </Link>
@@ -109,9 +112,6 @@ export default function Navbar() {
             </Link>
             <Link href="/help" onClick={() => setMenuOpen(false)}>
               Help
-            </Link>
-            <Link href="/all-rentals" onClick={() => setMenuOpen(false)}>
-              All Rentals
             </Link>
             
             {user ? (

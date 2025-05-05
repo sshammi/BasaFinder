@@ -1,7 +1,14 @@
 'use client'
 import { CldImage } from "next-cloudinary";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function HeroSection() {
+const [location, setLocation] = useState("");
+const router = useRouter();
+const handleLocationClick = (location: string) => {
+  router.push(`/location/${encodeURIComponent(location)}`);
+};
     return (
       <div className="flex flex-col items-center justify-center h-screen text-white bg-[#ff4b27ff] px-6 -mx-24">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center -mt-8">FIND YOUR NEXT HOME</h1>
@@ -11,9 +18,12 @@ export default function HeroSection() {
           <input
             type="text"
             placeholder="Search for a location..."
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
             className="flex-1 px-4 py-2 text-black outline-none rounded-l-full"
           />
-          <button className="bg-[#ff4b27ff] px-6 py-2 text-white font-semibold rounded hover:bg-orange-500">
+          <button className="bg-[#ff4b27ff] px-6 py-2 text-white font-semibold rounded hover:bg-orange-500"
+           onClick={() => handleLocationClick(location)}>
             Search
           </button>
         </div>

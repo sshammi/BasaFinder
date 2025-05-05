@@ -35,7 +35,7 @@ const PlaceService = () => {
   const handleLocationClick = (location: string) => {
     router.push(`/location/${encodeURIComponent(location)}`);
   };
-
+  console.log(location);
   return (
     <div className="p-0 md:p-4 flex flex-col items-center text-center py-16 my-20">
   <h1 className="text-4xl md:text-6xl font-bold mb-4">Your next house could be here</h1>
